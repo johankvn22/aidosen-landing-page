@@ -164,7 +164,7 @@ Nama Universitas/Institusi*
 Jabatan*
 Pilih Paket Kelas yang Diinginkan*
 Harga Promo yang Didapatkan: [otomatis tampil sesuai paket yang dipilih]
-Button Konsultasi / Daftar Sekarang
+Button Konsultasi / Daftar Sekarang (WhatsApp: +62 811-3955-599 / https://wa.me/628113955599)
 
 13. VALUE COMPARISON
 Headline Semua yang Anda Dapatkan dalam Satu Hari

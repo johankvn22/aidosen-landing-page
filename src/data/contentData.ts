@@ -1,5 +1,5 @@
-export const WA_NUMBER = "6282144995255";
-export const WA_DEFAULT_MSG = encodeURIComponent("Halo Jessica, saya dosen/akademisi ingin klaim Harga Khusus Mitra Universitas untuk kelas AI Dosen.");
+export const WA_NUMBER = "628113955599";
+export const WA_DEFAULT_MSG = encodeURIComponent("Halo, saya dosen/akademisi ingin klaim Harga Khusus Mitra Universitas untuk kelas AI Dosen.");
 export const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_DEFAULT_MSG}`;
 
 export const CURRENT_PERIOD = "1 Agustus 2026";
@@ -319,3 +319,39 @@ export const POPUP_DATA = {
   buttonText: "Amankan Harga Khusus Mitra Universitas",
   footerText: "Lanjutkan tanpa penawaran Harga Khusus Mitra Universitas"
 };
+
+export interface IKUItem {
+  id: string;
+  code: string;
+  category: string;
+  title: string;
+  description: string;
+  badge: string;
+}
+
+export const IKU_LIST: IKUItem[] = [
+  {
+    id: "iku-3",
+    code: "IKU 3",
+    category: "Tri Dharma Perguruan Tinggi",
+    title: "Dosen Berkegiatan di Luar Kampus",
+    description: "Pemanfaatan AI untuk membimbing proyek riset terapan, konsultasi industri, dan pengabdian masyarakat.",
+    badge: "Riset & Pengabdian"
+  },
+  {
+    id: "iku-5",
+    code: "IKU 5",
+    category: "Publikasi & Karya Ilmiah",
+    title: "Hasil Kerja Dosen Digunakan Masyarakat / Rekognisi Internasional",
+    description: "Akselerasi penulisan draft jurnal bereputasi Scopus/Sinta, patent drafting, dan hibah penelitian.",
+    badge: "Publikasi Scopus / Sinta"
+  },
+  {
+    id: "iku-7",
+    code: "IKU 7",
+    category: "Inovasi Pembelajaran",
+    title: "Kelas yang Kolaboratif dan Partisipatif",
+    description: "Pembuatan modul ajar interaktif, studi kasus berbasis AI, dan instrumen asesmen modern.",
+    badge: "Modul & Smart Teaching"
+  }
+];

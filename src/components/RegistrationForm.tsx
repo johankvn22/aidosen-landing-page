@@ -17,7 +17,7 @@ export const RegistrationForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const message = `Halo Jessica, saya ingin mendaftar kelas AI Dosen. Berikut data pendaftaran saya:
+    const message = `Halo, saya ingin mendaftar kelas AI Dosen. Berikut data pendaftaran saya:
 - Nama Lengkap: ${formData.fullName}
 - No WhatsApp: ${formData.phone}
 - Email: ${formData.email}
