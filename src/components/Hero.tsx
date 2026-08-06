@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
         id="hero" 
         className="relative min-h-[92vh] flex items-center pt-12 pb-20 overflow-hidden"
         style={{
-          backgroundImage: `url('/img/hero_bg_dosen.png')`,
+          backgroundImage: `url('./img/hero_bg_dosen.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center right'
         }}
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
           className="hidden xl:inline-block absolute top-10 left-10 z-20 bg-slate-900/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl transition-all duration-300 hover:scale-105 hover:border-sky-500/30"
         >
           <img 
-            src="/img/logo_southeast_asia_edtech50.png" 
+            src="./img/logo_southeast_asia_edtech50.png" 
             className="h-28 w-auto block object-contain rounded" 
             alt="Southeast Asia EdTech 50" 
           />

@@ -164,19 +164,19 @@ export const SPEAKERS_DATA = {
       name: "Andy Febrico Bintoro",
       role: "CTO / Co-Founder",
       bio: "Mentor ahli yang aktif menerapkan AI dalam dunia industri dan pendidikan untuk efisiensi riset serta transformasi institusi.",
-      image: "/img/tim/Ko Toro.jpg"
+      image: "./img/tim/Ko_Toro.jpg"
     },
     {
       name: "Stefen Laksana",
       role: "Applied AI Expert & Product Manager",
       bio: "Telah mendampingi lebih dari 50 institusi dan perusahaan dalam adopsi teknologi AI.",
-      image: "/img/tim/Pak Stefen.jpg"
+      image: "./img/tim/Pak_Stefen.jpg"
     },
     {
       name: "Nathanael Abelito Leo",
       role: "Applied AI Expert & IT Trainer",
       bio: "Spesialis implementasi AI untuk pendidikan dan industri.",
-      image: "/img/tim/Nathan.png"
+      image: "./img/tim/Nathan.png"
     }
   ]
 };

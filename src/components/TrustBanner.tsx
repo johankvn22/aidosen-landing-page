@@ -115,7 +115,7 @@ export const TrustBanner: React.FC = () => {
           <div className="bg-slate-900 text-white rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-slate-800">
             <div className="flex items-center gap-5">
               <img 
-                src="/img/logo_southeast_asia_edtech50.png" 
+                src="./img/logo_southeast_asia_edtech50.png" 
                 alt="HolonIQ SE Asia EdTech Top 50" 
                 className="h-14 w-auto object-contain shrink-0" 
               />

@@ -2,31 +2,31 @@
 
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet/WOFF2/Garet-Light.woff2') format('woff2');
+  src: url('./fonts/Garet/WOFF2/Garet-Light.woff2') format('woff2');
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet/WOFF2/Garet-Book.woff2') format('woff2');
+  src: url('./fonts/Garet/WOFF2/Garet-Book.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet/WOFF2/Garet-Medium.woff2') format('woff2');
+  src: url('./fonts/Garet/WOFF2/Garet-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet/WOFF2/Garet-Bold.woff2') format('woff2');
+  src: url('./fonts/Garet/WOFF2/Garet-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet/WOFF2/Garet-Heavy.woff2') format('woff2');
+  src: url('./fonts/Garet/WOFF2/Garet-Heavy.woff2') format('woff2');
   font-weight: 900;
   font-display: swap;
 }
