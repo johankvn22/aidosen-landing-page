@@ -62,7 +62,7 @@ export const ValueComparison: React.FC = () => {
             href={WA_LINK} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-garet font-black text-sm uppercase tracking-widest py-4 px-10 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+            className="inline-block w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-garet font-black text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest py-3.5 sm:py-4 px-5 sm:px-10 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center"
           >
             Amankan Harga Khusus Mitra Universitas &rarr;
           </a>

@@ -34,7 +34,7 @@ Mohon konfirmasi ketersediaan slot promo. Terima kasih!`;
   };
 
   return (
-    <div id="registration-form" className="bg-slate-900 border border-blue-500/30 rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(59,130,246,0.15)] text-white">
+    <div id="registration-form" className="bg-slate-900 border border-blue-500/30 rounded-3xl p-5 sm:p-8 md:p-12 shadow-[0_0_50px_rgba(59,130,246,0.15)] text-white">
       <div className="max-w-2xl mx-auto">
         
         {/* Form Title */}

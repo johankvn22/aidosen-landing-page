@@ -29,7 +29,7 @@ export const PainPoints: React.FC = () => {
           {PROBLEM_DATA.cards.map((card, idx) => (
             <div 
               key={card.id}
-              className="group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/50 flex flex-col justify-between"
+              className="group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 sm:p-8 hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/50 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">

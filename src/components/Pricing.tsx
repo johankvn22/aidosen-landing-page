@@ -22,7 +22,7 @@ export const Pricing: React.FC = () => {
           {PRICING_DATA.packages.map((pkg) => (
             <div 
               key={pkg.id}
-              className={`relative bg-slate-900/90 border rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 ${
+              className={`relative bg-slate-900/90 border rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                 pkg.isPopular 
                   ? 'border-amber-500/50 shadow-[0_0_40px_rgba(245,158,11,0.2)] md:-translate-y-2' 
                   : 'border-slate-800 hover:border-slate-700'

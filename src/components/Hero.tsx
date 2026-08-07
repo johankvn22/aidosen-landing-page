@@ -67,13 +67,13 @@ export const Hero: React.FC = () => {
           <div className="max-w-3xl space-y-7">
             
             {/* Top Label */}
-            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sky-400/30 bg-gradient-to-r from-sky-500/15 via-blue-500/10 to-indigo-500/15 backdrop-blur-xl font-jakarta text-xs sm:text-sm font-bold tracking-[0.12em] uppercase text-sky-300 shadow-[0_0_25px_rgba(56,189,248,0.15)]">
+            <div className="inline-flex items-center justify-center gap-2 sm:gap-2.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl sm:rounded-full border border-sky-400/30 bg-gradient-to-r from-sky-500/15 via-blue-500/10 to-indigo-500/15 backdrop-blur-xl font-jakarta text-[10px] xs:text-xs sm:text-sm font-bold tracking-wider sm:tracking-[0.12em] uppercase text-sky-300 shadow-[0_0_25px_rgba(56,189,248,0.15)] text-center leading-snug">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping shrink-0"></span>
               <span>AI-Powered Research &amp; Smart Teaching &bull; 1 Agustus 2026 &bull; Online &amp; Onsite</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-garet font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.12] text-white uppercase tracking-tight">
+            <h1 className="font-garet font-black text-3xl sm:text-5xl lg:text-7xl leading-[1.12] text-white uppercase tracking-tight">
               <span className="block text-slate-100 drop-shadow-md">
                 Riset Lebih Cepat.
               </span>
@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             {/* Sub-headline */}
-            <p className="font-jakarta text-base sm:text-lg font-normal text-slate-300/95 leading-[1.7] max-w-2xl drop-shadow-sm">
+            <p className="font-jakarta text-sm sm:text-lg font-normal text-slate-300/95 leading-[1.7] max-w-2xl drop-shadow-sm">
               AI bukan lagi sekadar alat bantu, melainkan sistem kerja baru bagi akademisi masa kini. Pelajari cara memanfaatkan AI untuk mempercepat proses penelitian, penyusunan proposal &amp; draft jurnal ilmiah, menghasilkan materi &amp; modul pembelajaran, hingga meningkatkan produktivitas publikasi secara lebih efektif dan terstruktur.
             </p>
 
@@ -127,29 +127,29 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Dynamic Countdown Timer */}
-            <div className="bg-slate-900/85 border border-amber-500/35 rounded-3xl p-5 sm:p-6 w-full max-w-xl backdrop-blur-md shadow-[0_0_35px_rgba(245,158,11,0.15)]">
-              <div className="text-amber-400 font-jakarta font-bold text-xs uppercase tracking-[0.16em] mb-3 block">
+            <div className="bg-slate-900/85 border border-amber-500/35 rounded-3xl p-4 sm:p-6 w-full max-w-xl backdrop-blur-md shadow-[0_0_35px_rgba(245,158,11,0.15)]">
+              <div className="text-amber-400 font-jakarta font-bold text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-[0.16em] mb-2.5 block text-center sm:text-left">
                 PENAWARAN HARGA KHUSUS MITRA BERAKHIR DALAM:
               </div>
-              <div className="flex items-center gap-2.5 font-garet">
-                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-4 py-2 text-center min-w-[68px] shadow-inner">
-                  <span className="text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.days)}</span>
-                  <span className="text-[9px] text-slate-400 uppercase tracking-[0.15em] font-jakarta font-bold block mt-0.5">HARI</span>
+              <div className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2.5 font-garet">
+                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-2 sm:px-4 py-1.5 sm:py-2 text-center min-w-[50px] sm:min-w-[68px] shadow-inner">
+                  <span className="text-xl sm:text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.days)}</span>
+                  <span className="text-[7px] sm:text-[9px] text-slate-400 uppercase tracking-wider font-jakarta font-bold block mt-0.5">HARI</span>
                 </div>
-                <span className="text-xl font-black text-amber-500/80 mb-3">:</span>
-                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-4 py-2 text-center min-w-[68px] shadow-inner">
-                  <span className="text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.hours)}</span>
-                  <span className="text-[9px] text-slate-400 uppercase tracking-[0.15em] font-jakarta font-bold block mt-0.5">JAM</span>
+                <span className="text-base sm:text-xl font-black text-amber-500/80 mb-2 sm:mb-3">:</span>
+                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-2 sm:px-4 py-1.5 sm:py-2 text-center min-w-[50px] sm:min-w-[68px] shadow-inner">
+                  <span className="text-xl sm:text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.hours)}</span>
+                  <span className="text-[7px] sm:text-[9px] text-slate-400 uppercase tracking-wider font-jakarta font-bold block mt-0.5">JAM</span>
                 </div>
-                <span className="text-xl font-black text-amber-500/80 mb-3">:</span>
-                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-4 py-2 text-center min-w-[68px] shadow-inner">
-                  <span className="text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.minutes)}</span>
-                  <span className="text-[9px] text-slate-400 uppercase tracking-[0.15em] font-jakarta font-bold block mt-0.5">MENIT</span>
+                <span className="text-base sm:text-xl font-black text-amber-500/80 mb-2 sm:mb-3">:</span>
+                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-2 sm:px-4 py-1.5 sm:py-2 text-center min-w-[50px] sm:min-w-[68px] shadow-inner">
+                  <span className="text-xl sm:text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.minutes)}</span>
+                  <span className="text-[7px] sm:text-[9px] text-slate-400 uppercase tracking-wider font-jakarta font-bold block mt-0.5">MENIT</span>
                 </div>
-                <span className="text-xl font-black text-amber-500/80 mb-3">:</span>
-                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-4 py-2 text-center min-w-[68px] shadow-inner">
-                  <span className="text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.seconds)}</span>
-                  <span className="text-[9px] text-slate-400 uppercase tracking-[0.15em] font-jakarta font-bold block mt-0.5">DETIK</span>
+                <span className="text-base sm:text-xl font-black text-amber-500/80 mb-2 sm:mb-3">:</span>
+                <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-2 sm:px-4 py-1.5 sm:py-2 text-center min-w-[50px] sm:min-w-[68px] shadow-inner">
+                  <span className="text-xl sm:text-2xl font-black text-amber-300 block tracking-wider font-mono">{formatNumber(timeLeft.seconds)}</span>
+                  <span className="text-[7px] sm:text-[9px] text-slate-400 uppercase tracking-wider font-jakarta font-bold block mt-0.5">DETIK</span>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@ export const Hero: React.FC = () => {
                 href={WA_LINK} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="premium-whatsapp-btn font-garet font-extrabold text-sm sm:text-base tracking-wider"
+                className="premium-whatsapp-btn font-garet font-extrabold text-xs sm:text-base tracking-wider"
               >
                 <span>Amankan Harga Khusus Mitra Universitas Sekarang &rarr;</span>
               </a>

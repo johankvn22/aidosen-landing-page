@@ -18,7 +18,7 @@ import { FloatingWaCs } from './components/FloatingWaCs';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#0f172a] text-slate-100 font-sans selection:bg-blue-500 selection:text-white">
+    <div className="min-h-screen bg-[#0f172a] text-slate-100 font-sans selection:bg-blue-500 selection:text-white overflow-x-hidden">
       {/* 1. Exit Intent Promo Modal */}
       <PopUp />
 
