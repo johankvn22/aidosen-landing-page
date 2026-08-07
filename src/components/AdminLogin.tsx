@@ -14,12 +14,12 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
     e.preventDefault();
     setError('');
 
-    // Default admin password for MAXY Academy
-    if (password === 'maxy123' || password === 'admin123') {
+    // Admin password check
+    if (password === 'maxyadmin' || password === 'admin123') {
       sessionStorage.setItem('maxy_aidosen_admin_auth', 'true');
       onLoginSuccess();
     } else {
-      setError('Password salah! Silakan coba lagi (Password default: maxy123)');
+      setError('Password salah! Silakan coba lagi.');
     }
   };
 
@@ -60,7 +60,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackTo
               <input
                 type={showPassword ? 'text' : 'password'}
                 required
-                placeholder="Masukkan kata sandi (default: maxy123)"
+                placeholder="Masukkan kata sandi admin"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:outline-none rounded-xl px-4 py-3 text-white placeholder-slate-500 transition-all font-mono"
