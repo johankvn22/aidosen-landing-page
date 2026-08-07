@@ -41,10 +41,10 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 40%, #1e3a8a 0%, transparent 70%)' }}></div>
         <div className="absolute inset-0 opacity-15 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 80%, #2563eb 0%, transparent 50%)' }}></div>
 
-        {/* Top Left Award Badge */}
+        {/* Top Right Award Badge */}
         <div 
           id="hero-award" 
-          className="hidden xl:inline-block absolute top-10 left-10 z-20 bg-slate-900/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl transition-all duration-300 hover:scale-105 hover:border-sky-500/30"
+          className="hidden xl:inline-block absolute top-10 right-10 z-20 bg-slate-900/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl transition-all duration-300 hover:scale-105 hover:border-sky-500/30"
         >
           <img 
             src="./img/logo_southeast_asia_edtech50.png" 
