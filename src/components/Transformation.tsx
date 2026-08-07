@@ -1,7 +1,10 @@
 import React from 'react';
-import { TRANSFORMATION_DATA } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
 
 export const Transformation: React.FC = () => {
+  const { content } = useContent();
+  const { transformationConfig } = content;
+
   return (
     <>
       {/* Wave transition into White Section */}
@@ -20,7 +23,7 @@ export const Transformation: React.FC = () => {
               TRANSFORMASI METODE
             </span>
             <h2 className="font-garet font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight uppercase">
-              {TRANSFORMATION_DATA.headline}
+              {transformationConfig.headline}
             </h2>
           </div>
 
@@ -45,8 +48,8 @@ export const Transformation: React.FC = () => {
 
             {/* Rows */}
             <div className="divide-y divide-slate-200">
-              {TRANSFORMATION_DATA.rows.map((row, idx) => (
-                <div key={idx} className="grid grid-cols-2 hover:bg-slate-100/80 transition-colors">
+              {transformationConfig.rows.map((row, idx) => (
+                <div key={row.id || idx} className="grid grid-cols-2 hover:bg-slate-100/80 transition-colors">
                   
                   {/* Left: Conventional (Red X icon) */}
                   <div className="p-6 md:p-8 flex items-start gap-4 border-r border-slate-200">
@@ -76,9 +79,9 @@ export const Transformation: React.FC = () => {
 
           {/* Mobile View (< md) - Stacked Interactive Comparison Cards */}
           <div className="block md:hidden space-y-6">
-            {TRANSFORMATION_DATA.rows.map((row, idx) => (
+            {transformationConfig.rows.map((row, idx) => (
               <div 
-                key={idx} 
+                key={row.id || idx} 
                 className="bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4 relative overflow-hidden"
               >
                 {/* Row Item Number Badge */}

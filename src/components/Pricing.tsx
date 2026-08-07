@@ -1,8 +1,11 @@
 import React from 'react';
-import { PRICING_DATA } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
 import { RegistrationForm } from './RegistrationForm';
 
 export const Pricing: React.FC = () => {
+  const { content } = useContent();
+  const { packages } = content;
+
   return (
     <section id="pricing" className="py-24 md:py-32 relative overflow-hidden bg-[#0f172a]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
@@ -13,13 +16,13 @@ export const Pricing: React.FC = () => {
             PAKET KELAS
           </span>
           <h2 className="font-garet font-black text-3xl sm:text-4xl lg:text-5xl leading-tight text-white uppercase">
-            {PRICING_DATA.headline}
+            Program Disesuaikan Kebutuhan Anda
           </h2>
         </div>
 
-        {/* 3 Package Cards */}
+        {/* Package Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {PRICING_DATA.packages.map((pkg) => (
+          {packages.map((pkg) => (
             <div 
               key={pkg.id}
               className={`relative bg-slate-900/90 border rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${

@@ -1,5 +1,6 @@
 import React from 'react';
-import { AI_TOOLS_LIST, AIToolItem } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
+import { AIToolItem } from '../types/contentTypes';
 
 const ToolLogo: React.FC<{ toolId: string }> = ({ toolId }) => {
   switch (toolId) {
@@ -52,31 +53,30 @@ const ToolLogo: React.FC<{ toolId: string }> = ({ toolId }) => {
           <path d="M8.5 12C11 12 13.5 15.5 15.5 17.5" stroke="#4285F4" strokeWidth="2" strokeLinecap="round" />
         </svg>
       );
-    case 'toolspendukung':
+    default:
       return (
-        <svg viewBox="0 0 24 24" className="w-7 h-7" aria-label="Tools Pendukung Logo">
-          <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V7l-9-5z" fill="#4F46E5" fillOpacity="0.2" stroke="#6366F1" strokeWidth="1.5" />
-          <path d="M9 12l2 2 4-4" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="17" cy="7" r="3" fill="#818CF8" />
-          <path d="M16 7l1 1 2-2" stroke="#FFFFFF" strokeWidth="1" strokeLinecap="round" />
+        <svg viewBox="0 0 24 24" className="w-7 h-7 text-sky-400 fill-current" aria-label="AI Logo">
+          <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" />
         </svg>
       );
-    default:
-      return null;
   }
 };
 
 export const AITools: React.FC = () => {
-  return (
-    <section id="ai-tools" className="py-20 lg:py-24 bg-slate-950 text-white relative border-t border-slate-800">
-      {/* Radial Background Glow */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_50%_30%,#1e3a8a_0%,transparent_60%)]"></div>
+  const { content } = useContent();
+  const { aiTools } = content;
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+  return (
+    <section id="ai-tools" className="py-20 lg:py-24 bg-[#090d16] relative border-t border-slate-800/80 overflow-hidden">
+      
+      {/* Background Subtle Gradient */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl opacity-20 pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 65%)' }}></div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 font-garet font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">
+        {/* Section Header */}
+        <div className="text-center mb-14 max-w-3xl mx-auto">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 font-garet font-bold text-xs tracking-widest uppercase mb-4">
             TEKNOLOGI &amp; INTEGRASI
           </span>
           <h2 className="font-garet font-black text-3xl sm:text-4xl text-white leading-tight uppercase tracking-tight">
@@ -89,7 +89,7 @@ export const AITools: React.FC = () => {
 
         {/* Tools Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
-          {AI_TOOLS_LIST.map((tool: AIToolItem) => (
+          {aiTools.map((tool: AIToolItem) => (
             <div 
               key={tool.id}
               className="bg-slate-900/90 border border-slate-800 hover:border-sky-500/50 rounded-2xl p-5 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(56,189,248,0.15)] group flex flex-col justify-between"
@@ -98,9 +98,9 @@ export const AITools: React.FC = () => {
                 {/* Logo Badge Container */}
                 <div 
                   className="w-14 h-14 mx-auto rounded-2xl bg-slate-950/80 border border-slate-800 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:border-sky-500/40 shadow-inner relative overflow-hidden"
-                  style={{ boxShadow: `0 0 15px ${tool.brandColor}15` }}
+                  style={{ boxShadow: `0 0 15px ${tool.brandColor || '#38BDF8'}15` }}
                 >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity" style={{ backgroundColor: tool.brandColor }}></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity" style={{ backgroundColor: tool.brandColor || '#38BDF8' }}></div>
                   <ToolLogo toolId={tool.id} />
                 </div>
                 

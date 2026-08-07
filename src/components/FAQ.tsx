@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { FAQS_DATA } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
 
 export const FAQ: React.FC = () => {
+  const { content } = useContent();
+  const { faqs } = content;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleAccordion = (index: number) => {
@@ -18,17 +20,17 @@ export const FAQ: React.FC = () => {
             FREQUENTLY ASKED QUESTIONS
           </span>
           <h2 className="font-garet font-black text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-900 uppercase">
-            {FAQS_DATA.headline}
+            Pertanyaan yang Sering Diajukan
           </h2>
         </div>
 
         {/* FAQ Accordion Items */}
         <div className="space-y-4">
-          {FAQS_DATA.list.map((faq, index) => {
+          {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div 
-                key={index} 
+                key={faq.id || index} 
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300 hover:border-blue-300"
               >
                 <button

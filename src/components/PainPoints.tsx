@@ -1,7 +1,10 @@
 import React from 'react';
-import { PROBLEM_DATA } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
 
 export const PainPoints: React.FC = () => {
+  const { content } = useContent();
+  const { problemConfig } = content;
+
   return (
     <section id="problem-section" className="relative overflow-hidden bg-[#0f172a] pt-24 pb-28 text-white">
 
@@ -14,19 +17,16 @@ export const PainPoints: React.FC = () => {
         {/* Section Label & Headline */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-garet font-bold text-xs tracking-widest uppercase mb-4">
-            {PROBLEM_DATA.label}
+            {problemConfig.label}
           </span>
           <h2 className="font-garet font-black text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight text-white uppercase mb-6">
-            Kerja Keras Saja Tidak Cukup<br className="hidden md:block"/>
-            <span className="bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-400 bg-clip-text text-transparent">
-              jika Waktu Anda Masih Habis untuk Kerja Konvensional
-            </span>
+            {problemConfig.headline}
           </h2>
         </div>
 
-        {/* 4 Cards Grid */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {PROBLEM_DATA.cards.map((card, idx) => (
+          {problemConfig.cards.map((card, idx) => (
             <div 
               key={card.id}
               className="group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 sm:p-8 hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:border-blue-500/50 flex flex-col justify-between"

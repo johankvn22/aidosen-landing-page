@@ -1,7 +1,11 @@
 import React from 'react';
+import { useContent } from '../context/ContentContext';
 import { TESTIMONIALS_DATA } from '../data/contentData';
 
 export const Testimonials: React.FC = () => {
+  const { content } = useContent();
+  const { testimonials } = content;
+
   return (
     <>
       {/* Wave Bridge */}
@@ -20,18 +24,18 @@ export const Testimonials: React.FC = () => {
               TESTIMONI PESERTA
             </span>
             <h2 className="font-garet font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight uppercase mb-4">
-              {TESTIMONIALS_DATA.headline}
+              Ini Cerita dan Pengalaman Mereka
             </h2>
             <p className="font-jakarta text-slate-600 text-sm sm:text-base leading-relaxed">
-              {TESTIMONIALS_DATA.subheadline}
+              Ratusan dosen telah mengikuti pelatihan AI bersama MAXY Academy dan mulai menerapkan AI untuk penelitian &amp; pengajaran.
             </p>
           </div>
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-            {TESTIMONIALS_DATA.featured.map((testi, idx) => (
+            {testimonials.map((testi, idx) => (
               <div 
-                key={idx}
+                key={testi.id || idx}
                 className="bg-white p-8 md:p-10 rounded-3xl border border-slate-200 shadow-lg relative flex flex-col justify-between hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 <span className="font-serif text-8xl text-slate-200 absolute top-2 left-5 pointer-events-none select-none opacity-80 leading-none">
@@ -43,8 +47,8 @@ export const Testimonials: React.FC = () => {
                 </p>
 
                 <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-sky-400 flex items-center justify-center font-bold text-white font-garet shadow-md">
-                    {testi.initials}
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-sky-400 flex items-center justify-center font-bold text-white font-garet shadow-md uppercase">
+                    {testi.name.slice(0, 2)}
                   </div>
                   <div>
                     <h4 className="font-garet font-bold text-slate-900 text-base">

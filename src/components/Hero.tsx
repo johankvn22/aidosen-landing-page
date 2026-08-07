@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { WA_LINK } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
 
 export const Hero: React.FC = () => {
+  const { content } = useContent();
+  const { appConfig } = content;
+
   // Dynamic countdown timer state
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 14, seconds: 11 });
 
@@ -23,25 +26,12 @@ export const Hero: React.FC = () => {
   return (
     <div className="relative bg-slate-950 text-white overflow-hidden">
       
-      {/* 1. TOP ANNOUNCEMENT BAR */}
-      <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border-b border-blue-500/20 py-2.5 px-4 text-center text-xs sm:text-sm font-jakarta font-semibold tracking-wider relative z-20">
-        <span className="font-extrabold text-amber-300 uppercase tracking-widest mr-2">
-          HARGA KHUSUS MITRA UNIVERSITAS TERBATAS
-        </span>
-        <span className="hidden md:inline text-slate-300 font-normal">
-          Harga akan kembali normal setelah kuota promo terpenuhi.&nbsp;
-        </span>
-        <span className="inline-block bg-amber-400/15 border border-amber-400/35 text-amber-300 font-bold px-2.5 py-0.5 rounded-md text-[11px] uppercase tracking-wider">
-          Tersisa 7 slot
-        </span>
-      </div>
-
       {/* HERO MAIN SECTION */}
       <section 
         id="hero" 
         className="relative min-h-[92vh] flex items-center pt-12 pb-20 overflow-hidden"
         style={{
-          backgroundImage: `url('./img/hero_bg_dosen.png')`,
+          backgroundImage: `url('${appConfig.heroBgUrl || './img/hero_bg_dosen.png'}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center right'
         }}
@@ -69,25 +59,25 @@ export const Hero: React.FC = () => {
             {/* Top Label */}
             <div className="inline-flex items-center justify-center gap-2 sm:gap-2.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl sm:rounded-full border border-sky-400/30 bg-gradient-to-r from-sky-500/15 via-blue-500/10 to-indigo-500/15 backdrop-blur-xl font-jakarta text-[10px] xs:text-xs sm:text-sm font-bold tracking-wider sm:tracking-[0.12em] uppercase text-sky-300 shadow-[0_0_25px_rgba(56,189,248,0.15)] text-center leading-snug">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping shrink-0"></span>
-              <span>AI-Powered Research &amp; Smart Teaching &bull; 1 Agustus 2026 &bull; Online &amp; Onsite</span>
+              <span>{appConfig.heroEventBadge}</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-garet font-black text-3xl sm:text-5xl lg:text-7xl leading-[1.12] text-white uppercase tracking-tight">
               <span className="block text-slate-100 drop-shadow-md">
-                Riset Lebih Cepat.
+                {appConfig.heroHeadline1}
               </span>
               <span className="block bg-gradient-to-r from-sky-300 via-blue-400 to-indigo-300 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(56,189,248,0.45)] py-1">
-                Bahan Ajar Lebih Menarik.
+                {appConfig.heroHeadline2}
               </span>
               <span className="block text-slate-100 drop-shadow-md">
-                Semua dengan AI.
+                {appConfig.heroHeadline3}
               </span>
             </h1>
 
             {/* Sub-headline */}
             <p className="font-jakarta text-sm sm:text-lg font-normal text-slate-300/95 leading-[1.7] max-w-2xl drop-shadow-sm">
-              AI bukan lagi sekadar alat bantu, melainkan sistem kerja baru bagi akademisi masa kini. Pelajari cara memanfaatkan AI untuk mempercepat proses penelitian, penyusunan proposal &amp; draft jurnal ilmiah, menghasilkan materi &amp; modul pembelajaran, hingga meningkatkan produktivitas publikasi secara lebih efektif dan terstruktur.
+              {appConfig.heroSubheadline}
             </p>
 
             {/* Badges Grid */}
@@ -99,7 +89,7 @@ export const Hero: React.FC = () => {
                   </svg>
                 </div>
                 <span className="font-jakarta font-bold text-xs text-slate-100 uppercase tracking-wide leading-snug">
-                  Riset 10x Lebih Cepat
+                  {appConfig.heroBadge1}
                 </span>
               </div>
 
@@ -110,7 +100,7 @@ export const Hero: React.FC = () => {
                   </svg>
                 </div>
                 <span className="font-jakarta font-bold text-xs text-slate-100 uppercase tracking-wide leading-snug">
-                  Sistem Riset Aktif 24/7
+                  {appConfig.heroBadge2}
                 </span>
               </div>
 
@@ -121,7 +111,7 @@ export const Hero: React.FC = () => {
                   </svg>
                 </div>
                 <span className="font-jakarta font-bold text-xs text-slate-100 uppercase tracking-wide leading-snug">
-                  80% Lebih Efisien
+                  {appConfig.heroBadge3}
                 </span>
               </div>
             </div>
@@ -129,7 +119,7 @@ export const Hero: React.FC = () => {
             {/* Dynamic Countdown Timer */}
             <div className="bg-slate-900/85 border border-amber-500/35 rounded-3xl p-4 sm:p-6 w-full max-w-xl backdrop-blur-md shadow-[0_0_35px_rgba(245,158,11,0.15)]">
               <div className="text-amber-400 font-jakarta font-bold text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-[0.16em] mb-2.5 block text-center sm:text-left">
-                PENAWARAN HARGA KHUSUS MITRA BERAKHIR DALAM:
+                {appConfig.heroCountdownTitle}
               </div>
               <div className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2.5 font-garet">
                 <div className="bg-slate-950 border border-amber-500/30 rounded-2xl px-2 sm:px-4 py-1.5 sm:py-2 text-center min-w-[50px] sm:min-w-[68px] shadow-inner">
@@ -157,12 +147,12 @@ export const Hero: React.FC = () => {
             {/* Action CTA Button */}
             <div className="pt-2">
               <a 
-                href={WA_LINK} 
+                href={appConfig.heroCtaLink} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="premium-whatsapp-btn font-garet font-extrabold text-xs sm:text-base tracking-wider"
               >
-                <span>Amankan Harga Khusus Mitra Universitas Sekarang &rarr;</span>
+                <span>{appConfig.heroCtaText}</span>
               </a>
             </div>
 

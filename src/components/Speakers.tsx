@@ -1,7 +1,10 @@
 import React from 'react';
-import { SPEAKERS_DATA } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
 
 export const Speakers: React.FC = () => {
+  const { content } = useContent();
+  const { speakers } = content;
+
   return (
     <section id="trainers" className="py-24 md:py-32 relative overflow-hidden bg-white">
       {/* Background Blurs */}
@@ -16,18 +19,18 @@ export const Speakers: React.FC = () => {
             PEMATERI UTAMA
           </span>
           <h2 className="font-garet font-black text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-900 uppercase mb-4">
-            {SPEAKERS_DATA.headline}
+            Belajar Langsung Bersama Praktisi AI Expert
           </h2>
           <p className="font-jakarta text-slate-600 text-sm sm:text-base leading-relaxed">
-            {SPEAKERS_DATA.subtext}
+            Dipandu oleh mentor yang aktif menerapkan AI dalam dunia industri dan pendidikan untuk efisiensi riset serta pengajaran.
           </p>
         </div>
 
         {/* Speakers Grid */}
         <div className="grid sm:grid-cols-3 gap-8">
-          {SPEAKERS_DATA.list.map((speaker, idx) => (
+          {speakers.map((speaker, idx) => (
             <div 
-              key={idx}
+              key={speaker.id || idx}
               className="relative group rounded-3xl p-[1px] bg-gradient-to-b from-slate-200 to-slate-100 hover:from-blue-500 hover:to-sky-400 transition-all duration-500"
             >
               <div className="bg-slate-50 border border-slate-200/80 h-full p-8 rounded-[23px] flex flex-col items-center text-center shadow-lg group-hover:shadow-2xl group-hover:bg-white transition-all duration-500 relative overflow-hidden">
@@ -56,7 +59,7 @@ export const Speakers: React.FC = () => {
                 <div className="w-10 h-1 bg-gradient-to-r from-blue-500 to-sky-400 rounded-full mb-5 opacity-60 group-hover:w-16 transition-all duration-500"></div>
 
                 <p className="font-jakarta text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {speaker.bio}
+                  {speaker.portfolio}
                 </p>
               </div>
             </div>

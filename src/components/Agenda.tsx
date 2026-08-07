@@ -1,7 +1,11 @@
 import React from 'react';
-import { CURRICULUM_DATA, WA_LINK } from '../data/contentData';
+import { useContent } from '../context/ContentContext';
+import { WA_LINK } from '../data/contentData';
 
 export const Agenda: React.FC = () => {
+  const { content } = useContent();
+  const { agendaModules } = content;
+
   return (
     <section id="curriculum" className="relative overflow-hidden bg-[#0f172a] py-24 lg:py-28 text-white">
 
@@ -14,46 +18,37 @@ export const Agenda: React.FC = () => {
         {/* Header */}
         <div className="mb-16 max-w-3xl">
           <span className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-garet font-bold text-xs tracking-widest uppercase mb-4">
-            {CURRICULUM_DATA.label}
+            KURIKULUM &amp; MODUL
           </span>
           <h2 className="font-garet font-black text-3xl sm:text-4xl md:text-5xl leading-tight text-white uppercase mb-4 tracking-tight">
-            {CURRICULUM_DATA.headline}
+            Pelajari strategi dan praktik penggunaan AI yang relevan untuk produktivitas akademik.
           </h2>
         </div>
 
         {/* Sessions list */}
         <div className="flex flex-col border-t border-blue-500/20">
-          {CURRICULUM_DATA.sessions.map((session) => (
+          {agendaModules.map((session, idx) => (
             <div 
-              key={session.sessionNumber}
+              key={session.id || idx}
               className="grid grid-cols-[60px_1fr] sm:grid-cols-[80px_1fr] gap-4 sm:gap-8 py-8 sm:py-10 border-b border-blue-500/18 transition-colors duration-200 hover:bg-white/4"
             >
               {/* Session Number */}
               <div className="flex flex-col items-center pt-1">
                 <div className="font-garet font-black text-2xl sm:text-3xl leading-none bg-gradient-to-br from-blue-400 to-sky-400 bg-clip-text text-transparent">
-                  {session.sessionNumber}
+                  0{idx + 1}
                 </div>
                 <div className="w-px flex-1 bg-gradient-to-b from-blue-500/40 to-transparent mt-3 min-h-[24px]"></div>
               </div>
 
               {/* Session Details */}
               <div>
-                <span className="inline-block font-jakarta text-[10px] font-bold tracking-widest uppercase text-blue-300 bg-blue-500/15 border border-blue-400/25 px-3 py-1 rounded-full mb-3">
-                  {session.tag}
-                </span>
-                
-                <h3 className="font-garet font-bold text-xl sm:text-2xl text-slate-100 mb-4">
+                <h3 className="font-garet font-bold text-xl sm:text-2xl text-slate-100 mb-3">
                   {session.title}
                 </h3>
 
-                <ul className="space-y-2.5">
-                  {session.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm sm:text-base font-jakarta">
-                      <span className="text-sky-400 font-bold mt-0.5">&bull;</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="font-jakarta text-slate-300 text-sm sm:text-base leading-relaxed">
+                  {session.desc}
+                </p>
               </div>
             </div>
           ))}
